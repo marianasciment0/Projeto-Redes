@@ -20,7 +20,7 @@ def main():
     while True:
         client, addr = server.accept()
         clients.append(client)
-        print(f"Conexão estabelecida com {addr}")
+        #print(f"Conexão estabelecida com {addr}")
 
         #Aqui ele cria uma thread para cada client que se conectar na rede
         thread = threading.Thread(target=messagesTreatment, args=[client])
@@ -45,6 +45,6 @@ def broadcast(msg, client):
 
 def deleteClient(client):
     clients.remove(client)
-    print(f"{client} desconectado")
+    #print(f"{client} desconectado")
 
 main()
